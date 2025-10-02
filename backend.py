@@ -88,7 +88,7 @@ def build_system_prompt(snippets):
     context_text = "\n\n".join([f"{p['title']} ({p['url']}):\n{p['text']}" for p in snippets])
     return (
         "You are Sozhaa AI AI Assistant. Use only the company's information provided below "
-        "(sozhaagroup.com). Answer only about the company, services, works, involved and contact information. "
+        "(sozhaa.ai). Answer only about the company, services, works, involved and contact information. "
         "If asked outside scope, reply politely that you only provide Sozhaa AI info. "
         "Keep replies clear, detailed, and professional.\n\n"
         "Company context:\n" + context_text + "\n\n"
@@ -98,7 +98,7 @@ def call_gemini(system_prompt, history, user_message):
     # Special rule for service queries
     if "service" in user_message.lower() or "services" in user_message.lower():
         return (
-            "Sozhaa AI provides a wide range of AI Agent, AI Solutions services 🚀.\n"
+            "Sozhaa AI provides a wide range of AI Agents, AI models creation services 🚀.\n"
             "You can get our services by visiting our website or contacting us at 📧 groupsozhaatech@gmail.com.\n"
             "Our team will guide you further."
         )
